@@ -4,16 +4,19 @@ package serconexion.data.entity;
 import java.util.Date;
 import java.util.UUID;
 
-public class CreditCard extends User{
+public class CreditCard {
 
     private UUID idCard;
     private int number;
     private Date expitationDate;
     private String address;
     private String titular;
+    private UUID idUser;
 
     public CreditCard() {
     }
+
+    User u = new User();
 
     public UUID getIdCard() {
         return idCard;
@@ -55,13 +58,12 @@ public class CreditCard extends User{
         this.titular = titular;
     }
 
-    @Override
     public UUID getIdUser() {
-        return super.getIdUser();
+        return u.getIdUser();
     }
 
-    @Override
     public void setIdUser(UUID idUser) {
-        super.setIdUser(idUser);
+        u.setIdUser(idUser);
+        this.idUser = idUser;
     }
 }

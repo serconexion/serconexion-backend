@@ -3,14 +3,17 @@ package serconexion.data.entity;
 
 import java.util.UUID;
 
-public class Place extends User{
+public class Place {
 
     private UUID idAddrees;
     private String city;
     private String address;
+    private UUID idUser;
 
     public Place() {
     }
+
+    User u = new User();
 
     public UUID getIdAddrees() {
         return idAddrees;
@@ -36,13 +39,12 @@ public class Place extends User{
         this.address = address;
     }
 
-    @Override
     public UUID getIdUser() {
-        return super.getIdUser();
+        return u.getIdUser();
     }
 
-    @Override
     public void setIdUser(UUID idUser) {
-        super.setIdUser(idUser);
+        u.setIdUser(idUser);
+        this.idUser = idUser;
     }
 }
