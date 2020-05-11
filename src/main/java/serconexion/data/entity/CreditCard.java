@@ -1,0 +1,69 @@
+package serconexion.data.entity;
+
+
+import java.util.Date;
+import java.util.UUID;
+
+public class CreditCard {
+
+    private UUID idCard;
+    private int number;
+    private Date expitationDate;
+    private String address;
+    private String titular;
+    private UUID idUser;
+
+    public CreditCard() {
+    }
+
+    User u = new User();
+
+    public UUID getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(UUID idCard) {
+        this.idCard = idCard;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public Date getExpitationDate() {
+        return expitationDate;
+    }
+
+    public void setExpitationDate(Date expitationDate) {
+        this.expitationDate = expitationDate;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    public UUID getIdUser() {
+        return u.getIdUser();
+    }
+
+    public void setIdUser(UUID idUser) {
+        u.setIdUser(idUser);
+        this.idUser = idUser;
+    }
+}
