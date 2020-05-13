@@ -11,6 +11,12 @@ public class Service {
     public Service() {
     }
 
+    public Service(UUID idService, String name, String description) {
+        this.idService = idService;
+        this.name = name;
+        this.description = description;
+    }
+
     public UUID getIdService() {
         return idService;
     }

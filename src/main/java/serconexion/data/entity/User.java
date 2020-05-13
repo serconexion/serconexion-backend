@@ -18,12 +18,29 @@ public class User {
     private String password;
     private boolean enabled;
     private String role;
-    private double balance;
-    private int rating;
+    //   private double balance;
+    //private int rating;
     private Date createdAt;
     private Date updatedAt;
 
-    public User() {
+    public User(){
+
+    }
+
+    public User(UUID idUser, String name, String lastName, int identificationDocument,
+                String email, String password, boolean enabled, String role,
+                Date createdAt, Date updatedAt) {
+        super();
+        this.idUser = idUser;
+        this.name = name;
+        this.lastName = lastName;
+        this.identificationDocument = identificationDocument;
+        this.email = email;
+        this.password = password;
+        this.enabled = enabled;
+        this.role = role;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public UUID getIdUser() {
@@ -89,7 +106,7 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
-
+/*
     public double getBalance() {
         return balance;
     }
@@ -98,6 +115,7 @@ public class User {
         this.balance = balance;
     }
 
+
     public int getRating() {
         return rating;
     }
@@ -105,7 +123,7 @@ public class User {
     public void setRating(int rating) {
         this.rating = rating;
     }
-
+*/
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -141,10 +159,12 @@ public class User {
         user.setCreatedAt(Date.valueOf(fecha));
 
         String role =user.getRole();
+        /*
         if(role.equals("Oferente")){
             user.setBalance(0);
             user.setRating(0);
         }
+         */
     }
 
 
