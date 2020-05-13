@@ -2,7 +2,10 @@ package serconexion.data.entity;
 
 
 import java.sql.Date;
-import java.util.UUID;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.*;
+
 
 
 public class User {
@@ -118,5 +121,33 @@ public class User {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    public void chooseRole (String rol){
+        User user = new User();
+        user.setRole(rol);
+    }
+
+    public void recordUser (UUID idUser, String name, String lastName, int identificationDocument, String email, String password) {
+        User user = new User();
+        LocalDate fecha = LocalDate.now();
+
+        user.setIdUser(idUser);
+        user.setName(name);
+        user.setLastName(lastName);
+        user.setIdentificationDocument(identificationDocument);
+        user.setEmail(email);
+        user.setPassword(password);
+        user.setEnabled(true);
+        user.setCreatedAt(Date.valueOf(fecha));
+
+        String role =user.getRole();
+        if(role.equals("Oferente")){
+            user.setBalance(0);
+            user.setRating(0);
+        }
+    }
+
+
+
 }
 
