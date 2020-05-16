@@ -18,29 +18,15 @@ public class User {
     private String password;
     private boolean enabled;
     private String role;
-    //   private double balance;
-    //private int rating;
+    private double balance;
+    private double rating;
+    private ArrayList<Double> allRatings;
+    private ArrayList<CreditCard> creditCards;
     private Date createdAt;
     private Date updatedAt;
 
     public User(){
 
-    }
-
-    public User(UUID idUser, String name, String lastName, int identificationDocument,
-                String email, String password, boolean enabled, String role,
-                Date createdAt, Date updatedAt) {
-        super();
-        this.idUser = idUser;
-        this.name = name;
-        this.lastName = lastName;
-        this.identificationDocument = identificationDocument;
-        this.email = email;
-        this.password = password;
-        this.enabled = enabled;
-        this.role = role;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
 
     public UUID getIdUser() {
@@ -106,7 +92,7 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
-/*
+
     public double getBalance() {
         return balance;
     }
@@ -116,14 +102,29 @@ public class User {
     }
 
 
-    public int getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
-*/
+    public ArrayList<Double> getAllRatings() {
+        return allRatings;
+    }
+
+    public void setAllRatings(ArrayList<Double> allRatings) {
+        this.allRatings = allRatings;
+    }
+
+    public ArrayList<CreditCard> getCreditCards() {
+        return creditCards;
+    }
+
+    public void setCreditCards(ArrayList<CreditCard> creditCards) {
+        this.creditCards = creditCards;
+    }
+
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -159,14 +160,27 @@ public class User {
         user.setCreatedAt(Date.valueOf(fecha));
 
         String role =user.getRole();
-        /*
+
         if(role.equals("Oferente")){
             user.setBalance(0);
             user.setRating(0);
         }
-         */
+
     }
 
+
+    public boolean ratingVisibility(){
+        for(double a:allRatings){
+            rating = rating+a;
+        }
+            rating=rating/allRatings.size();
+        return(allRatings.size()>4);
+    }
+
+    public void addRating(double rate){
+        allRatings.add(rate);
+        ratingVisibility();
+    }
 
 
 }
