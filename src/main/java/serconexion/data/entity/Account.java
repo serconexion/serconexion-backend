@@ -5,6 +5,15 @@ import java.util.UUID;
 
 public class Account  {
 
+    public Account(UUID idAccount, int number, String accountType, String bank, String titular, UUID idUser) {
+        this.idAccount = idAccount;
+        this.number = number;
+        this.accountType = accountType;
+        this.bank = bank;
+        this.titular = titular;
+        this.idUser = idUser;
+    }
+
     private UUID idAccount;
     private int number;
     private String accountType;
@@ -13,8 +22,7 @@ public class Account  {
     private UUID idUser;
     User u = new User();
 
-    public Account() {
-    }
+
 
     public UUID getIdAccount() {
         return idAccount;

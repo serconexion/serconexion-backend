@@ -19,11 +19,14 @@ public class User {
     private boolean enabled;
     private String role;
     private double balance;
-    private int rating;
+    private double rating;
+    private ArrayList<Double> allRatings;
+    private ArrayList<CreditCard> creditCards;
     private Date createdAt;
     private Date updatedAt;
 
-    public User() {
+    public User(){
+
     }
 
     public UUID getIdUser() {
@@ -98,12 +101,28 @@ public class User {
         this.balance = balance;
     }
 
-    public int getRating() {
+
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
+    }
+    public ArrayList<Double> getAllRatings() {
+        return allRatings;
+    }
+
+    public void setAllRatings(ArrayList<Double> allRatings) {
+        this.allRatings = allRatings;
+    }
+
+    public ArrayList<CreditCard> getCreditCards() {
+        return creditCards;
+    }
+
+    public void setCreditCards(ArrayList<CreditCard> creditCards) {
+        this.creditCards = creditCards;
     }
 
     public Date getCreatedAt() {
@@ -141,12 +160,27 @@ public class User {
         user.setCreatedAt(Date.valueOf(fecha));
 
         String role =user.getRole();
+
         if(role.equals("Oferente")){
             user.setBalance(0);
             user.setRating(0);
         }
+
     }
 
+
+    public boolean ratingVisibility(){
+        for(double a:allRatings){
+            rating = rating+a;
+        }
+            rating=rating/allRatings.size();
+        return(allRatings.size()>4);
+    }
+
+    public void addRating(double rate){
+        allRatings.add(rate);
+        ratingVisibility();
+    }
 
 
 }

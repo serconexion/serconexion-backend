@@ -1,6 +1,6 @@
 package serconexion.data.entity;
 
-
+//revisar
 import java.util.Date;
 import java.util.UUID;
 
@@ -8,7 +8,7 @@ public class CreditCard {
 
     private UUID idCard;
     private int number;
-    private Date expitationDate;
+    private Date expirationDate;
     private String address;
     private String titular;
     private UUID idUser;
@@ -34,12 +34,12 @@ public class CreditCard {
         this.number = number;
     }
 
-    public Date getExpitationDate() {
-        return expitationDate;
+    public Date getExpirationDate() {
+        return expirationDate;
     }
 
-    public void setExpitationDate(Date expitationDate) {
-        this.expitationDate = expitationDate;
+    public void setExpirationDate(Date expirationDate) {
+        this.expirationDate = expirationDate;
     }
 
     public String getAddress() {

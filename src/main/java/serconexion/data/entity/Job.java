@@ -128,11 +128,11 @@ public class Job  {
     }
 
     public UUID getIdLocation() {
-        return location.getIdAddrees();
+        return location.getIdAddress();
     }
 
     public void setIdLocation(UUID idLocation) {
-        location.setIdAddrees(idLocation);
+        location.setIdAddress(idLocation);
         this.idLocation = idLocation;
     }
 }

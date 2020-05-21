@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class Place {
 
-    private UUID idAddrees;
+    private UUID idAddress;
     private String city;
     private String address;
     private UUID idUser;
@@ -15,12 +15,12 @@ public class Place {
 
     User u = new User();
 
-    public UUID getIdAddrees() {
-        return idAddrees;
+    public UUID getIdAddress() {
+        return idAddress;
     }
 
-    public void setIdAddrees(UUID idAddrees) {
-        this.idAddrees = idAddrees;
+    public void setIdAddress(UUID idAddress) {
+        this.idAddress = idAddress;
     }
 
     public String getCity() {
