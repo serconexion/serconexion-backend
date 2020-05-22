@@ -47,4 +47,5 @@ public class Place {
         u.setIdUser(idUser);
         this.idUser = idUser;
     }
+
 }

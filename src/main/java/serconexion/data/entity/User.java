@@ -22,6 +22,7 @@ public class User {
     private double rating;
     private ArrayList<Double> allRatings;
     private ArrayList<CreditCard> creditCards;
+    private ArrayList<Place> ListPlaces;
     private Date createdAt;
     private Date updatedAt;
 
@@ -91,6 +92,14 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public ArrayList<Place> getListPlaces() {
+        return ListPlaces;
+    }
+
+    public void setListPlaces(ArrayList<Place> listPlaces) {
+        ListPlaces = listPlaces;
     }
 
     public double getBalance() {
@@ -168,6 +177,24 @@ public class User {
 
     }
 
+    public void EditUser (UUID idUser, String name, String lastName, int identificationDocument, String email, String password) {
+        User user = new User();
+        LocalDate fecha = LocalDate.now();
+
+        user.setIdUser(idUser);
+        user.setName(name);
+        user.setLastName(lastName);
+        user.setIdentificationDocument(identificationDocument);
+        user.setEmail(email);
+        user.setPassword(password);
+        user.setEnabled(true);
+        user.setCreatedAt(Date.valueOf(fecha));
+
+        String role =user.getRole();
+
+
+    }
+
 
     public boolean ratingVisibility(){
         for(double a:allRatings){
@@ -182,6 +209,22 @@ public class User {
         ratingVisibility();
     }
 
+    public void ToListPlace (Place newPlace){
+        User user = new User();
+        ArrayList<Place> list = new ArrayList<Place>();
+        if(user.getListPlaces() == null) {
+            list.add(newPlace);
+            user.setListPlaces(list);
+        } else {
+            ArrayList<Place> oldPlace = user.getListPlaces();
+            for ( Place p: oldPlace ){
+                list.add(p);
+            }
+            list.add(newPlace);
+            user.setListPlaces(list);
+        }
+
+    }
 
 }
 
