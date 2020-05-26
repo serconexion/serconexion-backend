@@ -1,6 +1,8 @@
 package serconexion.model;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.sun.istack.internal.NotNull;
 import serconexion.data.entity.CreditCard;
 import serconexion.data.entity.Place;
 
@@ -13,9 +15,13 @@ import java.util.*;
 public class User {
 
     private UUID idUser;
+    @NotNull
     private String name;
+    @NotNull
     private String lastName;
+    @NotNull
     private int identificationDocument;
+    @NotNull
     private String email;
     private String password;
     private boolean enabled;
@@ -31,13 +37,20 @@ public class User {
     public User(){
 
     }
-    public User(UUID idUser, String name, String lastName, int identificationDocument, String email, String password) {
+    public User(@JsonProperty("id") UUID idUser,@JsonProperty("name") String name,
+                @JsonProperty("lastName")String lastName,
+                @JsonProperty("identification") int identificationDocument,
+                @JsonProperty("email")String email,
+                @JsonProperty("password")String password) {
         this.idUser = idUser;
         this.name = name;
         this.lastName = lastName;
         this.identificationDocument = identificationDocument;
         this.email = email;
         this.password = password;
+    }
+
+    public User(UUID idUser, String from_postgres_db, String from_postgres_db1, String from_postgres_db2, String from_postgres_db3, String from_postgres_db4) {
     }
 
     public UUID getIdUser() {
