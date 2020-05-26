@@ -1,6 +1,8 @@
 package serconexion.data.entity;
 
 
+import serconexion.model.User;
+
 import java.util.UUID;
 
 public class Place {

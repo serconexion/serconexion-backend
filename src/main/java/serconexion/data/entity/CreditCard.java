@@ -1,6 +1,8 @@
 package serconexion.data.entity;
 
 //revisar
+import serconexion.model.User;
+
 import java.util.Date;
 import java.util.UUID;
 

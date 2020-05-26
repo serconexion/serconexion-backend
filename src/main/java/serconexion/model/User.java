@@ -1,9 +1,11 @@
-package serconexion.data.entity;
+package serconexion.model;
 
+
+import serconexion.data.entity.CreditCard;
+import serconexion.data.entity.Place;
 
 import java.sql.Date;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.*;
 
 
@@ -28,6 +30,14 @@ public class User {
 
     public User(){
 
+    }
+    public User(UUID idUser, String name, String lastName, int identificationDocument, String email, String password) {
+        this.idUser = idUser;
+        this.name = name;
+        this.lastName = lastName;
+        this.identificationDocument = identificationDocument;
+        this.email = email;
+        this.password = password;
     }
 
     public UUID getIdUser() {
