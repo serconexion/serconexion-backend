@@ -1,6 +1,6 @@
 package serconexion.api;
 
-import com.sun.istack.internal.NotNull;
+//import com.sun.istack.internal.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -21,9 +21,8 @@ public class UserController {
     }
 
     @PostMapping //cambiar a lo apropiado para app
-    public void addUser(@NotNull @RequestBody User user){
-        userService.addUser(user);
-    }
+    //public void addUser(@NotNull @RequestBody User user){ userService.addUser(user);    }
+    public void addUser( @RequestBody User user){ userService.addUser(user);    }
 
     @GetMapping
     public List<User> getAllUsers(){
@@ -40,7 +39,12 @@ public class UserController {
         userService.deleteUser(id);
     }
     @PutMapping(path = "{id}")
+   /*
     public void updateUser(@PathVariable("id") UUID id,@NotNull @RequestBody User userToUpdate){
+        userService.updateUser(id,userToUpdate);
+    }
+   */
+    public void updateUser(@PathVariable("id") UUID id, @RequestBody User userToUpdate){
         userService.updateUser(id,userToUpdate);
     }
 }
