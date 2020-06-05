@@ -2,7 +2,7 @@ package serconexion.model;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sun.istack.internal.NotNull;
+//import com.sun.istack.internal.NotNull;
 import serconexion.data.entity.CreditCard;
 import serconexion.data.entity.Place;
 
@@ -15,13 +15,13 @@ import java.util.*;
 public class User {
 
     private UUID idUser;
-    @NotNull
+    //@NotNull
     private String name;
-    @NotNull
+    //@NotNull
     private String lastName;
-    @NotNull
+    //@NotNull
     private int identificationDocument;
-    @NotNull
+    //@NotNull
     private String email;
     private String password;
     private boolean enabled;
@@ -56,6 +56,7 @@ public class User {
     public UUID getIdUser() {
         return idUser;
     }
+
 
     public void setIdUser(UUID idUser) {
         this.idUser = idUser;
@@ -179,6 +180,7 @@ public class User {
     }
 
     public void recordUser (UUID idUser, String name, String lastName, int identificationDocument, String email, String password) {
+
         User user = new User();
         LocalDate fecha = LocalDate.now();
 
@@ -201,6 +203,7 @@ public class User {
     }
 
     public void EditUser (UUID idUser, String name, String lastName, int identificationDocument, String email, String password) {
+
         User user = new User();
         LocalDate fecha = LocalDate.now();
 
