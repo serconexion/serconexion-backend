@@ -8,6 +8,7 @@ public class Service {
     private UUID idService;
     private String name;
     private String description;
+    private int value;
     public ArrayList<Service> services;
 
     public Service() {
@@ -17,6 +18,14 @@ public class Service {
         this.idService = idService;
         this.name = name;
         this.description = description;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 
     public UUID getIdService() {

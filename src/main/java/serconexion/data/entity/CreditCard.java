@@ -68,4 +68,18 @@ public class CreditCard {
         u.setIdUser(idUser);
         this.idUser = idUser;
     }
+
+    public int EstimateValue (int hour){
+        int value = 0;
+        Service service = new Service();
+        value = service.getValue()*hour;
+        return value;
+    }
+
+    public double Percentage (int hour){
+        double value = EstimateValue(hour);
+        value = value*0.05;
+        return  value;
+    }
+    
 }
