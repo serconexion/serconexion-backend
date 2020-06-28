@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 //import com.sun.istack.internal.NotNull;
 import serconexion.data.entity.CreditCard;
 import serconexion.data.entity.Place;
+import serconexion.data.entity.Service;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -33,6 +34,15 @@ public class User {
     private ArrayList<Place> ListPlaces;
     private Date createdAt;
     private Date updatedAt;
+    private UUID service;
+
+    public UUID getService() {
+        return service;
+    }
+
+    public void setService(UUID service) {
+        this.service = service;
+    }
 
     public User(){
 
@@ -251,6 +261,28 @@ public class User {
         }
 
     }
+    public ArrayList<Place> LookListPlace (User user){
+        ArrayList<Place> list = new ArrayList<Place>();
+        if(user.getListPlaces() == null) {
+            return null;
+        } else {
+            list = user.getListPlaces();
+            return list;
+        }
+    }
+
+    public boolean Login (String password, String email) {
+        User user = new User();
+        boolean log = false;
+        if (user.getEmail().equals(email) && user.getPassword().equals(password)) { log = true;}
+        return log;
+    }
+
+    public void ChooseService (String service){
+        User user = new User();
+        user.setService(java.util.UUID.fromString(service));
+    }
+
 
 }
 

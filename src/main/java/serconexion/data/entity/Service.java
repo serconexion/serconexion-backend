@@ -1,12 +1,14 @@
 package serconexion.data.entity;
 
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class Service {
     private UUID idService;
     private String name;
     private String description;
+    public ArrayList<Service> services;
 
     public Service() {
     }
@@ -30,7 +32,7 @@ public class Service {
     }
 
     public void setName(String name) {
-        name = name;
+        this.name = name;
     }
 
     public String getDescription() {
@@ -38,6 +40,11 @@ public class Service {
     }
 
     public void setDescription(String description) {
-        description = description;
+        this.description = description;
     }
+
+    public void ListService (Service service){
+        services.add(service);
+    }
+
 }
