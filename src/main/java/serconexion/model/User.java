@@ -34,13 +34,13 @@ public class User {
     private ArrayList<Place> ListPlaces;
     private Date createdAt;
     private Date updatedAt;
-    private UUID service;
+    private ArrayList<UUID> service;
 
-    public UUID getService() {
+    public ArrayList<UUID> getService() {
         return service;
     }
 
-    public void setService(UUID service) {
+    public void setService(ArrayList<UUID> service) {
         this.service = service;
     }
 
@@ -280,7 +280,22 @@ public class User {
 
     public void ChooseService (String service){
         User user = new User();
-        user.setService(java.util.UUID.fromString(service));
+        java.util.UUID.fromString(service);
+        ArrayList<UUID> services = user.getService();
+        services.add(java.util.UUID.fromString(service));
+        user.setService(services);
+    }
+    public double ViewBalance (User oferente){
+        double balance = oferente.getBalance();
+        return balance;
+    }
+
+    public void Withdrawal (User user, double money){
+        double balance = user.getBalance();
+        double intervale = 100000.00;
+        if (balance > intervale){
+            user.setBalance(balance-money);
+        }
     }
 
 
