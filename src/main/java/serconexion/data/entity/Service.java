@@ -1,6 +1,8 @@
 package serconexion.data.entity;
 
 
+import serconexion.model.User;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -56,4 +58,21 @@ public class Service {
         services.add(service);
     }
 
+    public String LookListService (){
+        ArrayList<Service> list = new ArrayList<Service>();
+        if(services == null) {
+            return null;
+        } else {
+            list = services;
+            return list.toString();
+        }
+    }
+    public Service choiseService (String service){
+        for (Service s: services){
+            if (s.getIdService().equals(service)){
+                return s;
+            }
+        }
+        return null;
+    }
 }

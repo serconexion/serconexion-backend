@@ -261,13 +261,13 @@ public class User {
         }
 
     }
-    public ArrayList<Place> LookListPlace (User user){
+    public String LookListPlace (){
         ArrayList<Place> list = new ArrayList<Place>();
-        if(user.getListPlaces() == null) {
+        if(ListPlaces == null) {
             return null;
         } else {
-            list = user.getListPlaces();
-            return list;
+            list = ListPlaces;
+            return list.toString();
         }
     }
 
@@ -285,8 +285,8 @@ public class User {
         services.add(java.util.UUID.fromString(service));
         user.setService(services);
     }
-    public double ViewBalance (User oferente){
-        double balance = oferente.getBalance();
+    public double ViewBalance (){
+        double balance = this.getBalance();
         return balance;
     }
 
