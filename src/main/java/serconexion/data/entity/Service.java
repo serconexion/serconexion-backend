@@ -67,6 +67,23 @@ public class Service {
     public void ListService (Service service){
         services.add(service);
     }
+    public String LookListService (){
+        ArrayList<Service> list = new ArrayList<Service>();
+        if(services == null) {
+            return null;
+        } else {
+            list = services;
+            return list.toString();
+        }
+    }
+    public Service choiseService (String service){
+        for (Service s: services){
+            if (s.getIdService().equals(service)){
+                return s;
+            }
+        }
+        return null;
+    }
 
     public User getOferente(int age,String sex, double rating){
         boolean en=false;
