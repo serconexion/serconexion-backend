@@ -23,12 +23,22 @@ public class Job  {
     private UUID idLocation;
 
     public Job() {
+
     }
 
     Service service = new Service();
     User client = new User();
     User worker = new User();
     Place location = new Place();
+
+    public Job(UUID idCliente, UUID idOferente, UUID idServicio, String des) {
+        idService= idServicio;
+        idClient=idCliente;
+        idService=idServicio;
+        Descripcion=des;
+        idWorker=idOferente;
+
+    }
 
     public UUID getIdJOb() {
         return IdJOb;

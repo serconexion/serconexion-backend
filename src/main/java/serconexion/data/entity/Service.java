@@ -1,6 +1,8 @@
 package serconexion.data.entity;
 
 
+import serconexion.model.User;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -10,6 +12,16 @@ public class Service {
     private String description;
     private int value;
     public ArrayList<Service> services;
+
+    public ArrayList<User> getOferentes() {
+        return oferentes;
+    }
+
+    public void setOferentes(ArrayList<User> oferentes) {
+        this.oferentes = oferentes;
+    }
+
+    public ArrayList<User> oferentes;
 
     public Service() {
     }
@@ -54,6 +66,20 @@ public class Service {
 
     public void ListService (Service service){
         services.add(service);
+    }
+
+    public User getOferente(int age,String sex, double rating){
+        boolean en=false;
+        User u =null;
+        int i=0;
+        while(i<oferentes.size()){
+            if(oferentes.get(i).getAge()==age && oferentes.get(i).getSex().equals(sex)
+                    && oferentes.get(i).getRating()==(rating)){
+                u=oferentes.get(i);
+                break;
+            }
+        }
+        return u;
     }
 
 }

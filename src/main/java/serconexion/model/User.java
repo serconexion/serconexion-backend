@@ -4,6 +4,7 @@ package serconexion.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 //import com.sun.istack.internal.NotNull;
 import serconexion.data.entity.CreditCard;
+import serconexion.data.entity.Job;
 import serconexion.data.entity.Place;
 import serconexion.data.entity.Service;
 
@@ -23,6 +24,9 @@ public class User {
     //@NotNull
     private int identificationDocument;
     //@NotNull
+    private int age;
+    private String sex;
+
     private String email;
     private String password;
     private boolean enabled;
@@ -144,6 +148,20 @@ public class User {
         this.balance = balance;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
     public double getRating() {
         return rating;
@@ -298,6 +316,10 @@ public class User {
         }
     }
 
+    public void RequestService(Service service,int age,String sex, double rating, String descripcion){
+        User O = service.getOferente(age,sex,rating);
+        Job job= new Job(getIdUser(),O.getIdUser(),service.getIdService(),descripcion);
 
+    }
 }
 
