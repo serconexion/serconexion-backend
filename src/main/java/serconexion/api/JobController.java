@@ -22,9 +22,8 @@ public class JobController {
         this.jobService = jobService;
     }
 
-    @PostMapping //cambiar a lo apropiado para app
-    //public void addUser(@NotNull @RequestBody User user){ userService.addUser(user);    }
-    public void addUser( @RequestBody Job job){ jobService.addJob(job);    }
+    @PostMapping
+    public void addJob( @RequestBody Job job){ jobService.addJob(job);    }
 
     @GetMapping
     public List<Job> getAllUsers(){
