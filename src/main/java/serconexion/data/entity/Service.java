@@ -11,7 +11,9 @@ public class Service {
     private String name;
     private String description;
     private int value;
+    private ArrayList<User> oferentes;
     public ArrayList<Service> services;
+
 
     public ArrayList<User> getOferentes() {
         return oferentes;
@@ -21,7 +23,7 @@ public class Service {
         this.oferentes = oferentes;
     }
 
-    public ArrayList<User> oferentes;
+
 
     public Service() {
     }
@@ -76,7 +78,7 @@ public class Service {
             return list.toString();
         }
     }
-    public Service choiseService (String service){
+    public Service chooseService(String service){
         for (Service s: services){
             if (s.getIdService().equals(service)){
                 return s;
