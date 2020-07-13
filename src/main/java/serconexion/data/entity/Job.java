@@ -8,10 +8,10 @@ import java.sql.Time;
 import java.util.UUID;
 
 public class Job  {
-    private UUID IdJob;
-    private String Descripcion;
-    private Time Time;
-    private double Value;
+    private UUID idJob;
+    private String descripcion;
+    private Time time;
+    private double value;
     private int status;
     private double rating;
     private Date createdAt;
@@ -35,41 +35,41 @@ public class Job  {
         idService= idServicio;
         idClient=idCliente;
         idService=idServicio;
-        Descripcion=des;
+        descripcion =des;
         idWorker=idOferente;
 
     }
 
     public UUID getIdJob() {
-        return IdJob;
+        return idJob;
     }
 
     public void setIdJob(UUID idJob) {
-        IdJob = idJob;
+        this.idJob = idJob;
     }
 
     public String getDescripcion() {
-        return Descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
     public java.sql.Time getTime() {
-        return Time;
+        return time;
     }
 
     public void setTime(java.sql.Time time) {
-        Time = time;
+        this.time = time;
     }
 
     public double getValue() {
-        return Value;
+        return value;
     }
 
     public void setValue(double value) {
-        Value = value;
+        this.value = value;
     }
 
     public int getStatus() {
