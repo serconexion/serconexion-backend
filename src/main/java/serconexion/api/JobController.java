@@ -26,7 +26,7 @@ public class JobController {
     public void addJob( @RequestBody Job job){ jobService.addJob(job);    }
 
     @GetMapping
-    public List<Job> getAllUsers(){
+    public List<Job> getAllJobs(){
         return jobService.getAllJobs();
     }
 
