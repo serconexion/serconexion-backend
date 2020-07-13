@@ -1,6 +1,7 @@
 package serconexion.data.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import serconexion.model.User;
 
 import java.sql.Date;
@@ -22,6 +23,7 @@ public class Job  {
     private UUID idWorker;
     private UUID idLocation;
 
+
     public Job() {
 
     }
@@ -31,7 +33,8 @@ public class Job  {
     User worker = new User();
     Place location = new Place();
 
-    public Job(UUID idCliente, UUID idOferente, UUID idServicio, String des) {
+    public Job(@JsonProperty("idCliente") UUID idCliente, @JsonProperty("idOferente") UUID idOferente,
+               @JsonProperty("idService") UUID idServicio,@JsonProperty("descripcion")  String des) {
         idService= idServicio;
         idClient=idCliente;
         idService=idServicio;
