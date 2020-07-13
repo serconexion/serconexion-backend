@@ -8,7 +8,7 @@ import java.sql.Time;
 import java.util.UUID;
 
 public class Job  {
-    private UUID IdJOb;
+    private UUID IdJob;
     private String Descripcion;
     private Time Time;
     private double Value;
@@ -40,12 +40,12 @@ public class Job  {
 
     }
 
-    public UUID getIdJOb() {
-        return IdJOb;
+    public UUID getIdJob() {
+        return IdJob;
     }
 
-    public void setIdJOb(UUID idJOb) {
-        IdJOb = idJOb;
+    public void setIdJob(UUID idJob) {
+        IdJob = idJob;
     }
 
     public String getDescripcion() {
