@@ -25,6 +25,7 @@ public class PostgreSqlUserDaoImpl implements UserDao {
             String id = resultSet.getString("idUser");
             UUID uuid = UUID.fromString(id);
             user.setIdUser(uuid);
+
             user.setName(resultSet.getString("Name"));
             user.setLastName(resultSet.getString("LastName"));
             user.setEmail((resultSet.getString("Email")));

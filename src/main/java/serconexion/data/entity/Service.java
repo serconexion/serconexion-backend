@@ -80,7 +80,8 @@ public class Service {
     }
     public Service chooseService(String service){
         for (Service s: services){
-            if (s.getIdService().equals(service)){
+            String a = (String.valueOf(s.getIdService()));
+            if (a.equals(service)){
                 return s;
             }
         }
@@ -101,4 +102,14 @@ public class Service {
         return u;
     }
 
+
+    public Service choiseService (String service){
+        for (Service s: services){
+            String a = String.valueOf(s.getIdService());
+            if (a.equals(service)){
+                return s;
+            }
+        }
+        return null;
+    }
 }

@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface JobDao {
+public abstract interface JobDao {
+
     int insertJob(UUID idJob, Job job);
 
     default int insertJob(Job job){
@@ -22,10 +23,7 @@ public interface JobDao {
 
     int updateJobById(UUID idJob, Job job);
 
-    String descriptionJob(UUID idJob, Job job);
+    //int descriptionJob(UUID idJob, Job job);
 
-    String locationJob(UUID idJob, Job job);
+    //int locationJob(UUID idJob, Job job);
 }
-
-
-

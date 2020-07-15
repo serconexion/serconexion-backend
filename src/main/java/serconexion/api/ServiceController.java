@@ -11,7 +11,7 @@ import serconexion.service.ServiceService;
 import java.util.List;
 import java.util.UUID;
 
-public class ServiceController {
+public abstract class ServiceController {
     private final ServiceService serService;
 
     @Autowired
