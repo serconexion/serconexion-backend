@@ -207,7 +207,8 @@ public class User {
         user.setRole(rol);
     }
 
-    public void recordUser (UUID idUser, String name, String lastName, int identificationDocument, String email, String password) {
+    public void recordUser (UUID idUser, String name, String lastName, int identificationDocument,
+                            String email, String password) {
 
         User user = new User();
         LocalDate fecha = LocalDate.now();
@@ -230,7 +231,7 @@ public class User {
 
     }
 
-    public void EditUser (UUID idUser, String name, String lastName, int identificationDocument, String email, String password) {
+    public void editUser(UUID idUser, String name, String lastName, int identificationDocument, String email, String password) {
 
         User user = new User();
         LocalDate fecha = LocalDate.now();

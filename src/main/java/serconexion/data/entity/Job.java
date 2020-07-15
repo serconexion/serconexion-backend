@@ -1,6 +1,7 @@
 package serconexion.data.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import serconexion.model.User;
 
 import java.sql.Date;
@@ -8,10 +9,10 @@ import java.sql.Time;
 import java.util.UUID;
 
 public class Job  {
-    private UUID IdJOb;
-    private String Descripcion;
-    private Time Time;
-    private double Value;
+    private UUID idJob;
+    private String descripcion;
+    private Time time;
+    private double value;
     private int status;
     private double rating;
     private Date createdAt;
@@ -22,6 +23,7 @@ public class Job  {
     private UUID idWorker;
     private UUID idLocation;
 
+
     public Job() {
 
     }
@@ -31,45 +33,46 @@ public class Job  {
     User worker = new User();
     Place location = new Place();
 
-    public Job(UUID idCliente, UUID idOferente, UUID idServicio, String des) {
+    public Job(@JsonProperty("idCliente") UUID idCliente, @JsonProperty("idOferente") UUID idOferente,
+               @JsonProperty("idService") UUID idServicio,@JsonProperty("descripcion")  String des) {
         idService= idServicio;
         idClient=idCliente;
         idService=idServicio;
-        Descripcion=des;
+        descripcion =des;
         idWorker=idOferente;
 
     }
 
-    public UUID getIdJOb() {
-        return IdJOb;
+    public UUID getIdJob() {
+        return idJob;
     }
 
-    public void setIdJOb(UUID idJOb) {
-        IdJOb = idJOb;
+    public void setIdJob(UUID idJob) {
+        this.idJob = idJob;
     }
 
     public String getDescripcion() {
-        return Descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
     public java.sql.Time getTime() {
-        return Time;
+        return time;
     }
 
     public void setTime(java.sql.Time time) {
-        Time = time;
+        this.time = time;
     }
 
     public double getValue() {
-        return Value;
+        return value;
     }
 
     public void setValue(double value) {
-        Value = value;
+        this.value = value;
     }
 
     public int getStatus() {
@@ -146,5 +149,17 @@ public class Job  {
     public void setIdLocation(UUID idLocation) {
         location.setIdAddress(idLocation);
         this.idLocation = idLocation;
+    }
+    public int EstimateValue (int hour){
+        int value = 0;
+        Service service = new Service();
+        value = service.getValue()*hour;
+        return value;
+    }
+
+    public double Percentage (int hour){
+        double value = EstimateValue(hour);
+        value = value*0.05;
+        return  value;
     }
 }
