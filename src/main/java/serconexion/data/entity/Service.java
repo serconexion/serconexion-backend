@@ -80,7 +80,8 @@ public class Service {
     }
     public Service chooseService(String service){
         for (Service s: services){
-            if (s.getIdService().equals(service)){
+            String a = (String.valueOf(s.getIdService()));
+            if (a.equals(service)){
                 return s;
             }
         }
@@ -101,18 +102,11 @@ public class Service {
         return u;
     }
 
-    public String LookListService (){
-        ArrayList<Service> list = new ArrayList<Service>();
-        if(services == null) {
-            return null;
-        } else {
-            list = services;
-            return list.toString();
-        }
-    }
+
     public Service choiseService (String service){
         for (Service s: services){
-            if (s.getIdService().equals(service)){
+            String a = String.valueOf(s.getIdService());
+            if (a.equals(service)){
                 return s;
             }
         }

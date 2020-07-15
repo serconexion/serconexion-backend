@@ -1,6 +1,5 @@
 package serconexion.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import serconexion.dao.JobDao;
@@ -11,13 +10,13 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class JobService {
+public abstract class JobService implements JobDao {
     private final JobDao jobDao;
 
-    @Autowired
     public JobService(@Qualifier("postgres") JobDao jobDao) {
         this.jobDao = jobDao;
     }
+
 
     public int addJob(Job job){
         return jobDao.insertJob(job);
@@ -39,8 +38,8 @@ public class JobService {
         return jobDao.updateJobById(id,newUser);
     }
 
-    public String descriptionJob(UUID idJob, Job job) { return jobDao.descriptionJob(idJob,job);}
+    //public String descriptionJob(UUID idJob, Job job) { return jobDao.descriptionJob(idJob,job);}
 
-    public String locationJob(UUID idJob, Job job) { return jobDao.locationJob(idJob,job);}
+    //public String locationJob(UUID idJob, Job job) { return jobDao.locationJob(idJob,job);}
 
 }

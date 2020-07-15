@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class ServiceService {
+public abstract class ServiceService {
     private final ServiceDao serDao;
 
     @Autowired

@@ -11,7 +11,7 @@ import java.util.UUID;
 
 
 @Repository("postgres")
-public class JobDataAccessService implements JobDao {
+public abstract class JobDataAccessService implements JobDao {
 
 
     @Override
@@ -45,7 +45,7 @@ public class JobDataAccessService implements JobDao {
         return 0;
     }
 
-    @Override
+    /*@Override
     public String descriptionJob(UUID idJob, Job job) {
         return null;
     }
@@ -53,7 +53,8 @@ public class JobDataAccessService implements JobDao {
     @Override
     public String locationJob(UUID idJob, Job job) {
         return null;
-    }
+    }*/
 
 
 }
+

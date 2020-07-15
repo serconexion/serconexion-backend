@@ -13,7 +13,7 @@ import java.util.UUID;
 @RequestMapping("api/v1/user")
 @RestController //cambiar a lo apropiado para app
 
-public class JobController {
+public abstract class JobController {
 
     private final JobService jobService;
 
@@ -45,13 +45,13 @@ public class JobController {
         jobService.updateJob(idJob,jobToUpdate);
     }
 
-    @GetMapping(path = "{idJob}")
+    /*@GetMapping(path = "{idJob}")
     public String getLocationById(@PathVariable("idJob") UUID idJob, @RequestBody Job job){
         return jobService.locationJob(idJob,job);
-    }
+    }*/
 
-    @GetMapping(path = "{idJob}")
+    /*@GetMapping(path = "{idJob}")
     public String getDescriptionById(@PathVariable("idJob") UUID idJob, @RequestBody Job job){
         return jobService.descriptionJob(idJob,job);
-    }
+    }*/
 }
